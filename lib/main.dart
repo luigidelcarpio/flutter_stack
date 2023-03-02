@@ -5,10 +5,11 @@ void main() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.transparent, // Transparent status bar
   ));
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,11 +18,11 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           centerTitle: true, // displays the AppBar title in the center
-          backgroundColor: Color(0xffF2F3F4), // AppBar background color
-          leading: Icon(
+          backgroundColor: const Color(0xffF2F3F4), // AppBar background color
+          leading: const Icon(
               Icons.arrow_back,
               color: Colors.black),
-          title: Text(
+          title: const Text(
             'AppBar title',
             style: TextStyle(color: Colors.black)),
         ),
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
           alignment: Alignment.center,
           children: <Widget>[
             Container( // Widget 1: background image
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('assets/img/iceberg.jpg'),
                   fit: BoxFit.cover // As small as possible while still covering the entire target box.
@@ -41,8 +42,8 @@ class MyApp extends StatelessWidget {
               color: Colors.black38,
             ),
             Container( // Widget 3: text
-              child: Text(
-                'Hola Flutter',
+              child: const Text(
+                'Hello Flutter',
                 style: TextStyle(color: Colors.white, fontSize: 30.0, fontWeight: FontWeight.bold),
               )
             )
